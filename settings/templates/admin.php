@@ -125,6 +125,20 @@ if ($_['databaseOverload']) {
 <?php
 }
 
+// Windows Warning
+if ($_['WindowsWarning']) {
+	?>
+<div class="section">
+	<h2><?php p($l->t('Windows'));?></h2>
+
+	<p class="securitywarning">
+		<?php p($l->t('Your server is running on Windows. We highly recommend Linux for optimum user experience.')); ?>
+	</p>
+
+</div>
+<?php
+}
+
 // if module fileinfo available?
 if (!$_['has_fileinfo']) {
 	?>
