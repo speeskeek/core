@@ -944,6 +944,17 @@ $CONFIG = array(
 'forwarded_for_headers' => array('HTTP_X_FORWARDED', 'HTTP_FORWARDED_FOR'),
 
 /**
+ * max file size for generating image previews with imagegd (default behaviour)
+ * If the image is bigger, it'll try other preview generators,
+ * but will most likely show the default mimetype icon
+ *
+ * Value represents the maximum filesize in megabytes
+ * Default is 50
+ * Set to -1 for no limit
+ */
+'max_filesize_image_previews' => 50,
+
+/**
  * This entry is just here to show a warning in case somebody copied the sample
  * configuration. DO NOT ADD THIS SWITCH TO YOUR CONFIGURATION!
  *

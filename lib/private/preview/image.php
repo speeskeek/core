@@ -26,6 +26,13 @@ class Image extends Provider {
 			return false;
 		}
 
+		$maxSizeForImages = \OC::$server->getConfig()->getSystemValue('max_filesize_image_previews', 50);
+		$size = $fileInfo->getSize();
+
+		if ($maxSizeForImages !== -1 && $size > ($maxSizeForImages * 1024 * 1024)) {
+			return false;
+		}
+
 		$image = new \OC_Image();
 
 		if($fileInfo['encrypted'] === true) {
