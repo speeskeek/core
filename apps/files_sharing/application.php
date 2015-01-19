@@ -73,8 +73,8 @@ class Application extends App {
 					$server->getDatabaseConnection(),
 					\OC\Files\Filesystem::getMountManager(),
 					\OC\Files\Filesystem::getLoader(),
-					$server->getUserSession(),
-					$server->getHTTPHelper()
+					$server->getHTTPHelper(),
+					$server->getUserSession()->getUser()->getUID()
 			);
 		});
 
